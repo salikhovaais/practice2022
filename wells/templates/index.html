@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head> 
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<main>
+    <section id="main-holder">
+        <h1>Вход в приложение</h1>
+<!--        {{form}}-->
+        <form id="login_form">
+            <th> <label> Логин: </label></th>
+        <input type="text" id = 'login' class = 'login-form-field' >
+            <th> <label> Пароль: </label></th>
+        <input type="password" id = 'password' class = 'login-form-field'>
+             <th> <label> URL сервера: </label></th>
+        <input type="text" id = 'url' class = 'login-form-field'>
+        </form>
+
+        <button id = 'run' > войти </button>
+        <div id="login-error-msg-holder">
+          <p id="login-error-msg">Неправильно введён логин или пароль </p>
+        </div>
+    </section>
+</main>
+
+{% csrf_token%}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    let static = "{% get_static_prefix %}";
+</script>
+<script src = "{% static 'js/script.js' %}"> </script>
+</body>
+</html>
